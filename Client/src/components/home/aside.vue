@@ -1,8 +1,7 @@
 <template>
 	<div class="aside md-h2">
 
-		<el-tree :data="data" :props="defaultProps" accordion @node-click="handleNodeClick">
-		</el-tree>
+		<el-tree :data="list" :props="defaultProps" accordion @node-click="$nodeClick"></el-tree>
 
 		<div class="aside-information">
 			<div class="aside-information-card md-h3">stable (v5.0.0-beta.4)</div>
@@ -13,46 +12,10 @@
 <script>
 	export default {
 		name: 'bwu-aside',
+		props: ['list'],
 		data() {
 			return {
-				data: [{
-					label: 'Hello',
-					children: [{
-						label: 'Vue',
-						children: [{
-							label: 'Hello Vue',
-							url:'/hello'
-						}]
-					}]
-				}, {
-					label: 'Pages',
-					children: [{
-						label: 'Blank_page',
-						children: [{
-							label: 'Page_1',
-							url:'/page_1'
-						}]
-					}, {
-						label: 'Filled_page',
-						children: [{
-							label: 'Page_2',
-							url:'/page_2'
-						}]
-					}]
-				}, {
-					label: '一级 3',
-					children: [{
-						label: '二级 3-1',
-						children: [{
-							label: '三级 3-1-1'
-						}]
-					}, {
-						label: '二级 3-2',
-						children: [{
-							label: '三级 3-2-1'
-						}]
-					}]
-				}],
+				data: [],
 				defaultProps: {
 					children: 'children',
 					label: 'label'
@@ -60,14 +23,15 @@
 			};
 		},
 		methods: {
-			handleNodeClick(data) {
-				if(data.url){
-					this.$router.push(data.url)
-				}
-			}
+			$nodeClick,
 		}
 	}
 
+	function $nodeClick(data){
+		const _this = this;
+
+		_this.$emit('nodeClick',data)
+	}
 </script>
 
 <style scoped>

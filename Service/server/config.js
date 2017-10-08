@@ -1,14 +1,17 @@
-const Koa = require('koa')
-const cors = require('koa2-cors') // 跨域
-const bodyParser = require('koa-bodyparser') // 解析请求
-const koaLogger = require('koa-logger') // 日志
+const Koa = require('koa') 
+const cors = require('koa2-cors')  // 跨域
+const bodyParser = require('koa-bodyparser')  // 解析请求
+const koaLogger = require('koa-logger')  // 日志
 const convert = require('koa-convert') // 适配 koa1 的中间件
-const crypto = require('crypto') // 加密
+const crypto = require('crypto')  // 加密
 const session = require('koa-session-minimal') // session
 
 
+const router = require('./routers/router') 
 
-export default (app) => {
+
+
+module.exports =  (app) => {
 
 
     // 跨域配置
@@ -19,6 +22,9 @@ export default (app) => {
 
     // 配置ctx.body解析中间件
     app.use(bodyParser())
+
+    // 加载路由中间件
+    app.use(router.routes()).use(router.allowedMethods())
 
     // 应用处理 session 的中间件
     app.use(session({

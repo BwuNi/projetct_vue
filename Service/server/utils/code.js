@@ -19,4 +19,4 @@ function decode(text,key){
 }  
 
 
-export default {encode,decode}
+module.exports = {encode,decode}

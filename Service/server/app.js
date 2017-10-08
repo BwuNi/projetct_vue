@@ -1,6 +1,6 @@
-import Koa from 'koa'
-import config from './config'
-import { encode, decode } from './utils/code'
+const Koa = require('koa') 
+const config = require('./config')
+const { encode, decode } = require('./utils/code') 
 
 
 const app = new Koa()
@@ -58,7 +58,7 @@ app.use(async (ctx) => {
         ctx.body = postData
     } else {
         // 其他请求显示404
-        ctx.body = '<h1>404！！！ o(╯□╰)o</h1>'
+        // ctx.body = '<h1>404！！！ o(╯□╰)o</h1>'
     }
 })
 
