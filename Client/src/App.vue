@@ -12,11 +12,16 @@
 			<bwu-login v-if='showLogin' @login='$login'></bwu-login>
 		</transition>
 
+		<transition name="fade">
+			<bwu-loading v-if='showLoading' @unload='$unload'></bwu-loading>
+		</transition>
+
 	</div>
 </template>
 
 <script>
 	import Header from './components/home/header.vue'
+	import Loading from './components/home/loading.vue'
 	import Aside from './components/home/aside.vue'
 	import Login from './components/home/login.vue'
 
@@ -26,10 +31,12 @@
 			'bwu-header': Header,
 			'bwu-aside': Aside,
 			'bwu-login': Login,
+			'bwu-loading': Loading,
 		},
 		data() {
 			return {
 				showLogin: true,
+				showLoading: true,
 				listData:[{
 					label: 'Hello',
 					children: [{
@@ -73,6 +80,7 @@
 		methods: {
 			$login,
 			$nodeClick,
+			$unload,
 		}
 
 	}
@@ -89,6 +97,10 @@
 	function $nodeClick(data) {
 		const _this = this
 		data.url ? changePage(_this,data.url) : ''
+	}
+
+	function $unload(){
+
 	}
 
 
