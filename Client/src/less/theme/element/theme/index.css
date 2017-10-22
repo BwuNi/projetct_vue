@@ -731,7 +731,7 @@
             appearance: none;
     background-color: #fff;
     background-image: none;
-    border-radius: 4px;
+    border-radius: 2px;
     border: 1px solid rgb(191, 203, 217);
     box-sizing: border-box;
     color: rgb(31, 45, 61);
@@ -823,7 +823,7 @@
     display: table-cell;
     position: relative;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     padding: 0 10px;
     width: 1px;
     white-space: nowrap;
@@ -892,7 +892,7 @@
     background-color: #fff;
     background-image: none;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     transition: border-color .2s cubic-bezier(.645,.045,.355,1);
 }
 .el-textarea__inner::-webkit-input-placeholder {
@@ -1574,7 +1574,7 @@
     height: 24px;
     line-height: 24px;
     font-size: 14px;
-    border-radius: 4px;
+    border-radius: 2px;
     color: #fff;
     background-color: #20a0ff;
 }
@@ -2179,7 +2179,7 @@
             appearance: none;
     background-color: #fff;
     background-image: none;
-    border-radius: 4px;
+    border-radius: 2px;
     border: 1px solid rgb(191, 203, 217);
     box-sizing: border-box;
     color: rgb(31, 45, 61);
@@ -2271,7 +2271,7 @@
     display: table-cell;
     position: relative;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     padding: 0 10px;
     width: 1px;
     white-space: nowrap;
@@ -2340,7 +2340,7 @@
     background-color: #fff;
     background-image: none;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     transition: border-color .2s cubic-bezier(.645,.045,.355,1);
 }
 .el-textarea__inner::-webkit-input-placeholder {
@@ -2856,7 +2856,7 @@
     -ms-user-select: none;
     padding: 10px 15px;
     font-size: 14px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 .el-button + .el-button {
     margin-left: 10px;
@@ -3113,17 +3113,17 @@
 .el-button--large {
     padding: 11px 19px;
     font-size: 16px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 .el-button--small {
     padding: 7px 9px;
     font-size: 12px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 .el-button--mini {
     padding: 4px 4px;
     font-size: 12px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 .el-button--text {
     border: none;
@@ -3722,7 +3722,7 @@
             appearance: none;
     background-color: #fff;
     background-image: none;
-    border-radius: 4px;
+    border-radius: 2px;
     border: 1px solid rgb(191, 203, 217);
     box-sizing: border-box;
     color: rgb(31, 45, 61);
@@ -3814,7 +3814,7 @@
     display: table-cell;
     position: relative;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     padding: 0 10px;
     width: 1px;
     white-space: nowrap;
@@ -3883,7 +3883,7 @@
     background-color: #fff;
     background-image: none;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     transition: border-color .2s cubic-bezier(.645,.045,.355,1);
 }
 .el-textarea__inner::-webkit-input-placeholder {
@@ -4025,7 +4025,7 @@
             appearance: none;
     background-color: #fff;
     background-image: none;
-    border-radius: 4px;
+    border-radius: 2px;
     border: 1px solid rgb(191, 203, 217);
     box-sizing: border-box;
     color: rgb(31, 45, 61);
@@ -4117,7 +4117,7 @@
     display: table-cell;
     position: relative;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     padding: 0 10px;
     width: 1px;
     white-space: nowrap;
@@ -4186,7 +4186,7 @@
     background-color: #fff;
     background-image: none;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     transition: border-color .2s cubic-bezier(.645,.045,.355,1);
 }
 .el-textarea__inner::-webkit-input-placeholder {
@@ -4763,14 +4763,14 @@
 }
 .el-radio-button:first-child .el-radio-button__inner {
     border-left: 1px solid rgb(191, 203, 217);
-    border-radius: 4px 0 0 4px;
+    border-radius: 2px 0 0 2px;
     box-shadow: none !important;
 }
 .el-radio-button:last-child .el-radio-button__inner {
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 2px 2px 0;
 }
 .el-radio-button:first-child:last-child .el-radio-button__inner {
-    border-radius: 4px;
+    border-radius: 2px;
 }
 .el-radio-button__inner {
     display: inline-block;
@@ -5018,7 +5018,7 @@
     display: inline-block;
     position: relative;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     box-sizing: border-box;
     width: 18px;
     height: 18px;
@@ -5084,11 +5084,11 @@
 }
 .el-checkbox-button:first-child .el-checkbox-button__inner {
     border-left: 1px solid rgb(191, 203, 217);
-    border-radius: 4px 0 0 4px;
+    border-radius: 2px 0 0 2px;
     box-shadow: none !important;
 }
 .el-checkbox-button:last-child .el-checkbox-button__inner {
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 2px 2px 0;
 }
 .el-checkbox-button__inner {
     display: inline-block;
@@ -5280,6 +5280,7 @@
     display: inline-block;
     font-size: 14px;
     cursor: pointer;
+    z-index: 2;
 }
 .el-switch__label * {
     line-height: 1;
@@ -5298,6 +5299,19 @@
 .el-switch__input {
     display: none;
 }
+.el-switch__input.allow-focus {
+    z-index: 0;
+    display: inline;
+    display: initial;
+    position: absolute;
+    left: 0;
+    top: 0;
+    outline: none;
+    opacity: 0;
+}
+.el-switch__input.allow-focus:focus + .el-switch__core {
+    box-shadow: 0 0 2px #20a0ff;
+}
 .el-switch__core {
     margin: 0;
     display: inline-block;
@@ -5311,6 +5325,7 @@
     background: rgb(191, 203, 217);
     cursor: pointer;
     transition: border-color .3s, background-color .3s;
+    z-index: 1;
 }
 .el-switch__core .el-switch__button {
     top: 0;
@@ -5679,7 +5694,7 @@
             appearance: none;
     background-color: #fff;
     background-image: none;
-    border-radius: 4px;
+    border-radius: 2px;
     border: 1px solid rgb(191, 203, 217);
     box-sizing: border-box;
     color: rgb(31, 45, 61);
@@ -5771,7 +5786,7 @@
     display: table-cell;
     position: relative;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     padding: 0 10px;
     width: 1px;
     white-space: nowrap;
@@ -5840,7 +5855,7 @@
     background-color: #fff;
     background-image: none;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     transition: border-color .2s cubic-bezier(.645,.045,.355,1);
 }
 .el-textarea__inner::-webkit-input-placeholder {
@@ -6522,7 +6537,7 @@
     height: 24px;
     line-height: 24px;
     font-size: 14px;
-    border-radius: 4px;
+    border-radius: 2px;
     color: #fff;
     background-color: #20a0ff;
 }
@@ -6639,7 +6654,7 @@
     -ms-user-select: none;
     padding: 10px 15px;
     font-size: 14px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 .el-button + .el-button {
     margin-left: 10px;
@@ -6896,17 +6911,17 @@
 .el-button--large {
     padding: 11px 19px;
     font-size: 16px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 .el-button--small {
     padding: 7px 9px;
     font-size: 12px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 .el-button--mini {
     padding: 4px 4px;
     font-size: 12px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 .el-button--text {
     border: none;
@@ -7182,7 +7197,7 @@
     display: inline-block;
     position: relative;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     box-sizing: border-box;
     width: 18px;
     height: 18px;
@@ -7248,11 +7263,11 @@
 }
 .el-checkbox-button:first-child .el-checkbox-button__inner {
     border-left: 1px solid rgb(191, 203, 217);
-    border-radius: 4px 0 0 4px;
+    border-radius: 2px 0 0 2px;
     box-shadow: none !important;
 }
 .el-checkbox-button:last-child .el-checkbox-button__inner {
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 2px 2px 0;
 }
 .el-checkbox-button__inner {
     display: inline-block;
@@ -7653,6 +7668,9 @@
 .el-table th {
     white-space: nowrap;
     overflow: hidden;
+}
+.el-table th.is-sortable {
+    cursor: pointer;
 }
 .el-table th {
     background-color: rgb(238, 241, 246);
@@ -8130,7 +8148,7 @@
     display: inline-block;
     position: relative;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     box-sizing: border-box;
     width: 18px;
     height: 18px;
@@ -8196,11 +8214,11 @@
 }
 .el-checkbox-button:first-child .el-checkbox-button__inner {
     border-left: 1px solid rgb(191, 203, 217);
-    border-radius: 4px 0 0 4px;
+    border-radius: 2px 0 0 2px;
     box-shadow: none !important;
 }
 .el-checkbox-button:last-child .el-checkbox-button__inner {
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 2px 2px 0;
 }
 .el-checkbox-button__inner {
     display: inline-block;
@@ -10332,7 +10350,7 @@
             appearance: none;
     background-color: #fff;
     background-image: none;
-    border-radius: 4px;
+    border-radius: 2px;
     border: 1px solid rgb(191, 203, 217);
     box-sizing: border-box;
     color: rgb(31, 45, 61);
@@ -10424,7 +10442,7 @@
     display: table-cell;
     position: relative;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     padding: 0 10px;
     width: 1px;
     white-space: nowrap;
@@ -10493,7 +10511,7 @@
     background-color: #fff;
     background-image: none;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     transition: border-color .2s cubic-bezier(.645,.045,.355,1);
 }
 .el-textarea__inner::-webkit-input-placeholder {
@@ -12232,7 +12250,7 @@
             appearance: none;
     background-color: #fff;
     background-image: none;
-    border-radius: 4px;
+    border-radius: 2px;
     border: 1px solid rgb(191, 203, 217);
     box-sizing: border-box;
     color: rgb(31, 45, 61);
@@ -12324,7 +12342,7 @@
     display: table-cell;
     position: relative;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     padding: 0 10px;
     width: 1px;
     white-space: nowrap;
@@ -12393,7 +12411,7 @@
     background-color: #fff;
     background-image: none;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     transition: border-color .2s cubic-bezier(.645,.045,.355,1);
 }
 .el-textarea__inner::-webkit-input-placeholder {
@@ -13176,7 +13194,7 @@
     -ms-user-select: none;
     padding: 10px 15px;
     font-size: 14px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 .el-button + .el-button {
     margin-left: 10px;
@@ -13433,17 +13451,17 @@
 .el-button--large {
     padding: 11px 19px;
     font-size: 16px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 .el-button--small {
     padding: 7px 9px;
     font-size: 12px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 .el-button--mini {
     padding: 4px 4px;
     font-size: 12px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 .el-button--text {
     border: none;
@@ -13666,7 +13684,7 @@
             appearance: none;
     background-color: #fff;
     background-image: none;
-    border-radius: 4px;
+    border-radius: 2px;
     border: 1px solid rgb(191, 203, 217);
     box-sizing: border-box;
     color: rgb(31, 45, 61);
@@ -13758,7 +13776,7 @@
     display: table-cell;
     position: relative;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     padding: 0 10px;
     width: 1px;
     white-space: nowrap;
@@ -13827,7 +13845,7 @@
     background-color: #fff;
     background-image: none;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     transition: border-color .2s cubic-bezier(.645,.045,.355,1);
 }
 .el-textarea__inner::-webkit-input-placeholder {
@@ -15052,7 +15070,7 @@
     padding: 8px 16px;
     margin: 0;
     box-sizing: border-box;
-    border-radius: 4px;
+    border-radius: 2px;
     position: relative;
     background-color: #fff;
     overflow: hidden;
@@ -15401,7 +15419,7 @@
             appearance: none;
     background-color: #fff;
     background-image: none;
-    border-radius: 4px;
+    border-radius: 2px;
     border: 1px solid rgb(191, 203, 217);
     box-sizing: border-box;
     color: rgb(31, 45, 61);
@@ -15493,7 +15511,7 @@
     display: table-cell;
     position: relative;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     padding: 0 10px;
     width: 1px;
     white-space: nowrap;
@@ -15562,7 +15580,7 @@
     background-color: #fff;
     background-image: none;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     transition: border-color .2s cubic-bezier(.645,.045,.355,1);
 }
 .el-textarea__inner::-webkit-input-placeholder {
@@ -16104,11 +16122,11 @@
 .el-slider.is-vertical.el-slider--with-input .el-slider__input .el-input-number__decrease {
     width: 18px;
     right: 18px;
-    border-bottom-left-radius: 4px;
+    border-bottom-left-radius: 2px;
 }
 .el-slider.is-vertical.el-slider--with-input .el-slider__input .el-input-number__increase {
     width: 19px;
-    border-bottom-right-radius: 4px;
+    border-bottom-right-radius: 2px;
 }
 .el-slider.is-vertical.el-slider--with-input .el-slider__input .el-input-number__increase ~ .el-input .el-input__inner {
     border-bottom-left-radius: 0;
@@ -21081,7 +21099,7 @@
             appearance: none;
     background-color: #fff;
     background-image: none;
-    border-radius: 4px;
+    border-radius: 2px;
     border: 1px solid rgb(191, 203, 217);
     box-sizing: border-box;
     color: rgb(31, 45, 61);
@@ -21173,7 +21191,7 @@
     display: table-cell;
     position: relative;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     padding: 0 10px;
     width: 1px;
     white-space: nowrap;
@@ -21242,7 +21260,7 @@
     background-color: #fff;
     background-image: none;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     transition: border-color .2s cubic-bezier(.645,.045,.355,1);
 }
 .el-textarea__inner::-webkit-input-placeholder {
@@ -22023,7 +22041,7 @@
             appearance: none;
     background-color: #fff;
     background-image: none;
-    border-radius: 4px;
+    border-radius: 2px;
     border: 1px solid rgb(191, 203, 217);
     box-sizing: border-box;
     color: rgb(31, 45, 61);
@@ -22115,7 +22133,7 @@
     display: table-cell;
     position: relative;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     padding: 0 10px;
     width: 1px;
     white-space: nowrap;
@@ -22184,7 +22202,7 @@
     background-color: #fff;
     background-image: none;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     transition: border-color .2s cubic-bezier(.645,.045,.355,1);
 }
 .el-textarea__inner::-webkit-input-placeholder {
@@ -22313,7 +22331,7 @@
     -ms-user-select: none;
     padding: 10px 15px;
     font-size: 14px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 .el-button + .el-button {
     margin-left: 10px;
@@ -22570,17 +22588,17 @@
 .el-button--large {
     padding: 11px 19px;
     font-size: 16px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 .el-button--small {
     padding: 7px 9px;
     font-size: 12px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 .el-button--mini {
     padding: 4px 4px;
     font-size: 12px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 .el-button--text {
     border: none;
@@ -22855,7 +22873,7 @@
     display: inline-block;
     position: relative;
     border: 1px solid rgb(191, 203, 217);
-    border-radius: 4px;
+    border-radius: 2px;
     box-sizing: border-box;
     width: 18px;
     height: 18px;
@@ -22921,11 +22939,11 @@
 }
 .el-checkbox-button:first-child .el-checkbox-button__inner {
     border-left: 1px solid rgb(191, 203, 217);
-    border-radius: 4px 0 0 4px;
+    border-radius: 2px 0 0 2px;
     box-shadow: none !important;
 }
 .el-checkbox-button:last-child .el-checkbox-button__inner {
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 2px 2px 0;
 }
 .el-checkbox-button__inner {
     display: inline-block;

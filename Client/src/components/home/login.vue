@@ -5,26 +5,22 @@
 				<h1 class="col-1_1">用户登陆</h1>
 			</div>
 			<div class="row">
-				<label for="" class="col-4_1">用户名 ：</label>
-				<div class="col-4_3">
-					<el-input value='admin'></el-input>
+				<div class="col-4_4">
+					<el-input value='admin' type='password' icon="">
+						<el-button slot="prepend" icon="vue-person"></el-button>
+					</el-input>
 				</div>
 			</div>
 			<div class="row">
-				<label for="" class="col-4_1">密码 ：</label>
-				<div class="col-4_3">
-					<el-input value='admin' type='password'></el-input>
+				<div class="col-4_4">
+					<el-input value='password' type='password' icon="">
+						<el-button slot="prepend" icon="vue-vpnkey"></el-button>
+					</el-input>
 				</div>
 			</div>
 			<div class="row">
-
-				<div class="off-8_2">
-				</div>
-				<div class="col-8_3">
+				<div class="col-8_8">
 					<el-button v-on:click="checkValue" type="primary" style="width:100%">登录</el-button>
-				</div>
-				<div class="col-8_3">
-					<el-button style="width:100%" >取消</el-button>
 				</div>
 			</div>
 
@@ -43,7 +39,7 @@
 				msg: 'Welcome to Your Vue.js App'
 			}
 		},
-		methods:{
+		methods: {
 			checkValue
 		},
 		mounted: function () {
@@ -69,26 +65,26 @@
 		el.appendChild(c)
 	}
 
-	function checkValue(uname,ucode){
+	function checkValue(uname, ucode) {
 		const _this = this
 
-		Ajax({type:"GET",url:"http://127.0.0.1:8081/api/user"})
-		.then(
-			(success)=>{
-			console.log(success)
-			console.log(_this)
-			_this.$emit('login')
-		}).catch(
-			(error)=>{
+		Ajax({ type: "GET", url: "http://127.0.0.1:8081/api/user" })
+			.then(
+			(success) => {
+				console.log(success)
+				console.log(_this)
+				_this.$emit('login')
+			}).catch(
+			(error) => {
 				alert("Error")
-		})
+			})
 	}
 
-	function succ(){
+	function succ() {
 
 	}
 
-	function erro(){
+	function erro() {
 	}
 
 </script>
@@ -107,10 +103,15 @@
 	.panel {
 		position: absolute;
 		left: 50%;
-		top: 40%;
-		width: 400px;
-		transform: translate(-50%, -40%);
+		top: 45%;
+		width: 300px;
+		transform: translate(-50%, -45%);
 		z-index: 999;
 		background-color: #ffffff;
+	}
+
+	.panel h1{
+		text-align: center;
+		font-size: 24px;
 	}
 </style>

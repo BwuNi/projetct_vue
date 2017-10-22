@@ -8,7 +8,7 @@
 		<div class="user">
 			<el-dropdown trigger="click" :hide-on-click="true">
 				<span class="el-dropdown-link">
-					<div class="user-face"><i class="icon iconfont icon-account-circle"></i></div>
+					<div class="user-face"><i class="icon iconfont el-icon-vue-accountcircle"></i></div>
 					<div class="user-name">Bwuning</div>
 					<div class="user-dropdown"><i class="el-icon-caret-bottom el-icon--right"></i></div>
 				</span>
@@ -88,6 +88,7 @@
 	}
 
 	.el-dropdown-link .iconfont {
+		line-height: 64px;
 		font-size: 36px
 	}
 
