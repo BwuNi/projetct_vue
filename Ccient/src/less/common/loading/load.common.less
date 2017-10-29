@@ -1,0 +1,21 @@
+@mask-color:  #ffffff;
+@mask-dark-color: darken(@mask-color, 10%); 
+@ele-color:  #66ccff;
+
+@loading-top: 45%;
+@loading-left: 50%;
+
+.loading__ctnr{
+	background-color: @mask-color;
+	position: fixed;
+	top: 0;bottom: 0;left: 0;right: 0;
+	z-index: 1000;
+	opacity: 0.9;
+}
+
+.loading__ele{
+	position: absolute;
+	font-size: 20px;
+	left: @loading-left;top: @loading-top;
+	transform: translate(-@loading-left, -@loading-top);
+}
