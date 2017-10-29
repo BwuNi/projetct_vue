@@ -10,9 +10,9 @@
 			<bwu-login v-if='showLogin' @login='$login'></bwu-login>
 		</transition>
 
-		<transition name="fade">
+		<!-- <transition name="fade">
 			<bwu-loading v-if='showLoading' @unload='$unload'></bwu-loading>
-		</transition>
+		</transition> -->
 
 	</div>
 </template>
@@ -35,8 +35,8 @@
 		},
 		data() {
 			return {
-				showLogin: true,
-				showLoading: this.$store.state.isLoading,
+				showLogin: false,
+				showLoading: false||this.$store.state.isLoading,
 				listData: [{
 					label: 'Hello',
 					children: [{
