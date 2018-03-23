@@ -13,7 +13,6 @@ const router = require('./routers/router')
 
 module.exports =  (app) => {
 
-
     // 跨域配置
     app.use(cors())
 

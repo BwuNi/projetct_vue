@@ -8,7 +8,6 @@ const app = new Koa()
 config(app)
 
 app.use(async (ctx, next) => {
-
     if (ctx.url === '/cookie') {
 
         if (ctx.cookies.get('cid')) {

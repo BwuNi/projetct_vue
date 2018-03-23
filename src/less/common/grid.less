@@ -1,0 +1,87 @@
+
+/* Container */
+.ctnr {
+	display: block;
+	padding: 12px!important;
+}
+
+.ctnr * { 
+    box-sizing: border-box
+}
+
+/* Row */
+.row{
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+	clear: both;
+	padding: 8px 16px;
+	position: relative;
+}
+
+.row:before,
+.row:after {
+    content: "";
+    display: table;
+	clear: both;
+}
+
+/* Row Alignment */
+[class *= 'col-'] {
+	position: relative;
+    float: left;
+    min-height: 24px;
+	padding: 0 16px; /* 设置间距 */
+	
+}
+
+[class *= 'off-'] {
+	position: relative;
+    float: left;
+	min-height: 24px;
+	height: 100%;
+    padding: 16px; /* 设置间距 */
+}
+
+.row .right{
+	float: right;
+}
+
+/* 默认 12 栅格 */
+
+
+.generate-columns(@n, @i: 1) when (@i =< @n) {
+  .col_@{i} {
+    width: (@i * 100% / @n);
+  }
+
+  .off_@{i} {
+    margin-left: (@i * 100% / @n);
+  }
+  .generate-columns(@n, (@i + 1));
+}
+
+.generate-columns(12);
+
+/* 内部 1-11 栅格 */
+
+
+.generate-inner-columns(@m, @j: 1) when (@j =< @m) {
+	
+	.generate-inner(@n, @i: 1) when (@i =< @n) {
+		.col-@{n}_@{i} {
+		width: (@i * 100% / @n);
+		}
+	
+		.off-@{n}_@{i} {
+		margin-left: (@i * 100% / @n);
+		}
+		.generate-inner(@n, (@i + 1));
+	}
+
+	.generate-inner(@j);
+
+	.generate-inner-columns(@m, (@j + 1));
+}
+  
+.generate-inner-columns(12);
