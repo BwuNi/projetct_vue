@@ -6,5 +6,5 @@ export default Typer({
     parents:[User.mod],
     
     INIT_MOD : 'INIT_MOD',
-    CHANGE_MOD : 'CHANGE_MOD',
+    CHANGE_MOD : 'CHANGE_MOD'
 })

@@ -34,7 +34,12 @@ export default {
                                     {
                                         title: 'Page_1',
                                         src: 'root-home-Page_1'
-                                    }
+                                    },
+                                    
+                                    {
+                                      title: 'menu',
+                                      src: 'root-home-menu'
+                                  }
                                 ]
                             },
                             {

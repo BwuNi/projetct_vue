@@ -1,4 +1,4 @@
-import root from './root/mod'
+import root from '../components/modules/index'
 
 
 const RouterLabeler = (mod, name = '') => (

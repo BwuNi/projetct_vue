@@ -4,6 +4,7 @@
   ],
   "plugins": [
     "syntax-dynamic-import",
+    "transform-vue-jsx",
     ["component", [
       {
         "libraryName": "element-ui",

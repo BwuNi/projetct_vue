@@ -1,4 +1,4 @@
-import home from './home/mod'
+import home from './home/index'
 
 export default {
     name:'root',

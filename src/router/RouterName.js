@@ -1,4 +1,4 @@
-import root from './root/mod'
+import root from '../components/modules/index'
 import routerLabel from '@/router/RouterLabel'
 
 
