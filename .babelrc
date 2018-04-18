@@ -1,10 +1,12 @@
 {
   "presets": [
-    ["env", { "modules": false }]
+    ["env", { "modules": false }],
+    "babel-preset-power-assert"
   ],
   "plugins": [
     "syntax-dynamic-import",
     "transform-vue-jsx",
+    "istanbul",
     ["component", [
       {
         "libraryName": "element-ui",
