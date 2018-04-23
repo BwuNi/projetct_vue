@@ -15,6 +15,10 @@ service.stdout.on('data', function (data) {
     console.log(chalk.yellow(`service: ${data.toString()}`))
 });
 
+service.stderr.on('data', (data) => {
+  console.log(chalk.yellow(`service: ${data.toString()}`));
+});
+
 const 
     client_path = path.resolve(__dirname,'../'),
     client = spawn(
@@ -23,5 +27,9 @@ const
 
 client.stdout.on('data', function (buffer) {
     console.log(chalk.blue(`client: ${buffer.toString()}`))
+});
+
+client.stderr.on('data', (data) => {
+  console.log(chalk.blue(`client: ${data.toString()}`));
 });
 

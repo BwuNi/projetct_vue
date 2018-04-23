@@ -85,6 +85,7 @@ export default {
 				width: this.target.width + 'px',
 				height: this.target.height + 'px',
 				transform: `translate(${this.target.left}px,${this.target.top}px)`,
+				transition:`all,left,top 0.3s,0s,0s ease-out,ease-out,ease-out`,
 
 				paddingTop: this.headHeight ? this.headHeight : '32px',
 				paddingBottom: !this.footer ? '0'
