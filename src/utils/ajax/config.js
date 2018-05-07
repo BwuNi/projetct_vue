@@ -6,6 +6,7 @@ const
         data: '',
         dataType: 'json',
         contentType: 'application/json',
+        encrypt:false,
         beforeSend: function() {}
     },
     def_post_config = Object.assign(def_config, {
@@ -26,14 +27,12 @@ const
       securityrisk:'WCKJAPI_SecurityRisk/',
       finance:'WCKJAPI_Finance/',
       assets:'WCKJAPI_Assets/'
-    }
-
-
-
-
-
+    },
+    env = window.globConfig ? window.globConfig.envirnment ? window.globConfig.envirnment : 'dev' : 'dev'
+    
 export {
     def_config,
     origin,
-    system
+    system,
+    env
 }

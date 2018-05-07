@@ -34,9 +34,9 @@ function _ajax(config) {
       xhr.send(convertData(ajaxData.data))
       xhr.onreadystatechange = function () {
         if (xhr.readyState !== 4) {
+          console.log(xhr)
           return
         }
-  
         if (xhr.status == 200) {
           resolve(xhr.response)
         } else {
@@ -72,6 +72,7 @@ function _ajax(config) {
     } else {
       return data
     }
+    
   }
 
 
