@@ -17,7 +17,8 @@ const
     }),
     origin = {
         prod: 'http://139.129.237.60:1102/',
-        dev: 'http://127.0.0.1:1102/'
+        dev: 'http://127.0.0.1:1102/',
+        mock: 'http://127.0.0.1:8081/'
     },
     system = {
       roadproperty:'WCKJAPI_RoadProperty/',
@@ -28,7 +29,7 @@ const
       finance:'WCKJAPI_Finance/',
       assets:'WCKJAPI_Assets/'
     },
-    env = window.globConfig ? window.globConfig.envirnment ? window.globConfig.envirnment : 'dev' : 'dev'
+    env = window.globConfig ? window.globConfig.envirnment ? window.globConfig.envirnment : 'mock' : 'mock'
     
 export {
     def_config,

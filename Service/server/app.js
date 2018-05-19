@@ -1,11 +1,11 @@
 const Koa = require('koa') 
-const config = require('./config')
+const init = require('./init')
 const { encode, decode } = require('./utils/code') 
 
 
 const app = new Koa()
 
-config(app)
+init(app)
 
 app.use(async (ctx, next) => {
     if (ctx.url === '/cookie') {

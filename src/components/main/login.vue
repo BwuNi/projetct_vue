@@ -1,8 +1,8 @@
 <template>
 	<div class="mask">
 		<form class="panel">
-			<input type='text' placeholder="用户名" v-model="uname"></input>
-			<input type='password' placeholder="密码" v-model="ucode"></input>
+			<input type='text' placeholder="用户名" v-model="uname" ></input>
+			<input type='password' placeholder="密码" v-model="ucode" ></input>
 			<input type='text' placeholder="验证码" v-model="vcode"></input>
 			<div class="check_img"><img :src = 'img_src' @click="init_check"></div>
 			<button @click="check_value" type="button" class="btn">登录</button>
@@ -14,6 +14,7 @@
 <script>
 import Colorful from '../../utils/view/ColorfulBand.js'
 import Ajax from '../../utils/ajax'
+import cookie from 'js-cookie'
 
 let vcode_id = ''
 
@@ -24,8 +25,8 @@ export default {
 			msg: 'Welcome to Your Vue.js App',
 			img_src: '',
 			vcode: '',
-			ucode: '',
-			uname: ''
+			ucode: 'Wckj123',
+			uname: '超级管理员'
 		}
 	},
 	methods: {
@@ -55,6 +56,7 @@ function initBackground(el) {
 }
 
 function init_check() {
+	const _this = this
 	vcode_id = (() => {
 		const vidrandom = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
 			'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f',
@@ -70,7 +72,12 @@ function init_check() {
 			.join('')
 		)
 	})()
-	this.img_src = `http://127.0.0.1:1102/WCKJAPI_MD/GetValidateCode/{"data":"${vcode_id}"}`
+
+	Ajax().get(`GetValidateCode/{"data":"${vcode_id}"}`).then(({ data }) => {
+		_this.img_src = data
+	}).catch(() => {
+		_this.img_src = `http://127.0.0.1:8081/WCKJAPI_MD/GetValidateCode/{"data":"${vcode_id}"}`
+	})
 }
 
 function before_check(_this) {
@@ -83,7 +90,7 @@ function before_check(_this) {
 function check_value() {
 	const _this = this
 
-	if(!before_check(_this))
+	if (!before_check(_this))
 		return
 
 	Ajax()
@@ -94,7 +101,11 @@ function check_value() {
 			VCODEID: vcode_id
 		})
 		.encrypt(true)
-		.post('Login').then(res => console.log(res))
+		.post('Login').then(({ data }) => {
+			console.log(data)
+			cookie.set('user_id', data);
+			_this.$emit('login')
+		})
 
 }
 

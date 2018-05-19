@@ -1,9 +1,10 @@
-const Router = require('koa-router') 
+const Router = require('koa-router')
 
-const api = require('./api/api') 
+const
+    WCKJAPI_MD = require('./WCKJAPI_MD/index')
 
 let router = new Router()
 
-router.use('/api', api.routes(), api.allowedMethods())
+router.use('/WCKJAPI_MD', WCKJAPI_MD.routes(), WCKJAPI_MD.allowedMethods())
 
 module.exports = router
