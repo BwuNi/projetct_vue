@@ -16,6 +16,9 @@ import Colorful from '../../utils/view/ColorfulBand.js'
 import Ajax from '../../utils/ajax'
 import cookie from 'js-cookie'
 
+import pageTabs from '@/store/modules/pageTabs'
+import system from '@/store/modules/user/system'
+
 let vcode_id = ''
 
 export default {
@@ -33,23 +36,20 @@ export default {
 		check_value,
 		init_check
 	},
-	mounted: function () {
+	mounted() {
 		const _this = this
-		initBackground(_this.$el)
+		init_background(_this.$el)
 		init_check.apply(_this)
 	}
 }
 
 
-function initBackground(el) {
+function init_background(el) {
 	let c = document.createElement('canvas')
 	c.style.height = '100%'
 	c.style.width = '100%'
 
 	let the_canvas = Colorful(c)
-	// document.onclick = the_canvas.render.bind(the_canvas)
-	// document.ontouchstart = the_canvas.render.bind(the_canvas)
-
 	the_canvas.render()
 
 	el.appendChild(c)
@@ -73,11 +73,18 @@ function init_check() {
 		)
 	})()
 
-	Ajax().get(`GetValidateCode/{"data":"${vcode_id}"}`).then(({ data }) => {
-		_this.img_src = data
-	}).catch(() => {
-		_this.img_src = `http://127.0.0.1:8081/WCKJAPI_MD/GetValidateCode/{"data":"${vcode_id}"}`
-	})
+
+	_this.img_src = `http://127.0.0.1:1102/WCKJAPI_MD/GetValidateCode/` + encodeURIComponent(`{"data":"${vcode_id}"}`)
+
+	// Ajax()
+	// .data(null)
+	// .get(`GetValidateCode/{"data":"${vcode_id}"}`)
+	// .then(({ data }) => {
+	// 	_this.img_src = data
+	// })
+	// .catch(() => {
+	// 	_this.img_src = `http://127.0.0.1:8081/WCKJAPI_MD/GetValidateCode/{"data":"${vcode_id}"}`
+	// })
 }
 
 function before_check(_this) {
@@ -102,18 +109,42 @@ function check_value() {
 		})
 		.encrypt(true)
 		.post('Login').then(({ data }) => {
-			console.log(data)
-			cookie.set('user_id', data);
-			_this.$emit('login')
+			succ(_this, data)
 		})
-
 }
 
-function succ() {
+function succ(_this, id) {
+	cookie.set('LOGIN_KEY', id)
 
+	Ajax()
+		.get('GetMyMenuTops')
+		.then(({ data }) => {
+			_this.$store.commit(
+				system.mut.INIT_MOD,
+				{
+					modules: data.map(i => ({
+						name: i.MNAME,
+						nid: i.MID,
+						icon: i.ICON.split('-').join('s-'),
+						pages: [],
+						sort:i.SORT
+					}))
+				}
+			)
+
+			console.log(data.map(i => ({
+				name: i.MNAME,
+				nid: i.MID,
+				icon: i.ICON.split('s-').join('-'),
+				pages: []
+			})))
+		})
+
+	_this.$emit('login')
 }
 
 function err() {
+
 }
 
 </script>

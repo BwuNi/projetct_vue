@@ -23,7 +23,7 @@
 
 <script>
 import Pages from '@/router/RouterLabel'
-import PageTabs from '@/store/modules/pageTab/mutation.type'
+import pageTabs from '@/store/modules/pageTabs'
 
 export default {
 	name: "bwu-pageContainer",
@@ -43,14 +43,14 @@ export default {
 	computed: {
 		activePage: {
 			get: function () {
-				return this.$store.state[PageTabs.mod].activePageName
+				return this.$store.state.PageTabs.activePageName
 			},
 			set: function (value) {
-				this.$store.commit(PageTabs.mutations.SET_PAGE, value)
+				this.$store.commit(pageTabs.mut.SET_PAGE, value)
 			}
 		},
 		openedPages: function () {
-			return this.$store.state[PageTabs.mod].pages
+			return this.$store.state.PageTabs.pages
 		}
 	},
 	mounted() {
@@ -80,14 +80,13 @@ export default {
 					}
 				});
 
-				this.$store.commit(PageTabs.mutations.REMOVE_PAGE, closeIndex)
-				this.$store.commit(PageTabs.mutations.SET_PAGE, activeName)
+				this.$store.commit(pageTabs.mut.REMOVE_PAGE, closeIndex)
+				this.$store.commit(pageTabs.mut.SET_PAGE, activeName)
 			}
 		},
 		handleNodeClick(data) {
-			console.log(data.src)
 			if (data.src) {
-				this.$store.commit(PageTabs.mutations.ADD_PAGE, {
+				this.$store.commit(pageTabs.mut.ADD_PAGE, {
 					title: data.label,
 					src: data.src
 				})

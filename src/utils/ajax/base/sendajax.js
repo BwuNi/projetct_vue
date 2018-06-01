@@ -1,7 +1,9 @@
 import encrypt from '../base/encrypt'
 import _ajax from '../_ajax'
 
-export default function send_ajax(op, res, rej, convertData = (op,i) => i) {
+export default function send_ajax(op, res, rej, convertData = (op, i) => i) {
+    
+
     if (op.encrypt) {
         encrypt(op.data).then((data) => {
             op.data = data
@@ -12,10 +14,10 @@ export default function send_ajax(op, res, rej, convertData = (op,i) => i) {
 
 function ajax(op, res, rej, convertData) {
 
-    if (op.data) {
-        op.data = convertData(op,op.data)
-    }
 
+    if (op.data || op.data === '') {
+        op.data = convertData(op, op.data)
+    }
     // 调用基础 ajax 模块
     _ajax(op).then((data) => {
         let result = data

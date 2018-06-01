@@ -55,8 +55,6 @@ export default {
 				orginLeft = _this.target.left,
 				orginTop = _this.target.top
 
-			console.log(event)
-
 			// 解决event兼容问题
 			var event = event || window.event;
 			// 获取鼠标在页面上坐标

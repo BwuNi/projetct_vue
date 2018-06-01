@@ -18,7 +18,6 @@ export default {
     methods: {
     },
     mounted() {
-        console.log(this.$refs.main.offsetWidth)
     }
 }    
 </script>

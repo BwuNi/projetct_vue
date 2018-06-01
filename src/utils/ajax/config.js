@@ -2,19 +2,22 @@ const
     def_config = {
         type: 'GET',
         url: '',
-        async: 'true',
+        async: true,
         data: '',
         dataType: 'json',
         contentType: 'application/json',
         encrypt:false,
         beforeSend: function() {}
     },
-    def_post_config = Object.assign(def_config, {
+    def_post_config = {
         type: "POST",
-    }),
-    def_get_config = Object.assign(def_config, {
-        type: "GET",
-    }),
+    },
+    def_get_config =  {
+        type: 'GET',
+        data: '',
+        dataType: null,
+        contentType: 'text/plain'
+    },
     origin = {
         prod: 'http://139.129.237.60:1102/',
         dev: 'http://127.0.0.1:1102/',
@@ -35,5 +38,6 @@ export {
     def_config,
     origin,
     system,
-    env
+    env,
+    def_get_config
 }

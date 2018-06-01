@@ -27,10 +27,8 @@ function ajax() {
             }
 
             if (xhr.status == 200) {
-                console.log('get data')
                 resolve(xhr.response)
             } else {
-                console.log('get error')
                 reject(xhr.statusText)
             }
         }

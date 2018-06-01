@@ -6,7 +6,7 @@ import {
 } from '../config'
 
 import send_ajax from '../base/sendajax'
-
+import cookie from 'js-cookie'
 
 export default function post(op = {}, path = '', sys = 'def') {
     op.url = origin[env] + system[sys] + path
@@ -24,7 +24,7 @@ function convertData(op, data) {
         return JSON.stringify({
             param: JSON.stringify({
                 data: data,
-                token: '',
+                token: cookie.get('LOGIN_KEY'),
                 encrypt: true
             })
         })
@@ -32,7 +32,7 @@ function convertData(op, data) {
         return JSON.stringify({
             param: JSON.stringify({
                 data: data,
-                token: ''
+                token: cookie.get('LOGIN_KEY')
             })
         })
 }

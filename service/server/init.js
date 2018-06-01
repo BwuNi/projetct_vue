@@ -9,6 +9,7 @@ const session = require('koa-session-minimal') // session
 
 const convertParam = require('./middleware/convertParam') // session
 const decrypt = require('./middleware/decrypt')
+const dataParser = require('./middleware/dataParser')
 
 const router = require('./routers/router')
 
@@ -30,9 +31,13 @@ module.exports = (app) => {
 
     // 数据解析
     app.use(convertParam)
-
+    dataParser
     // 数据解密
     app.use(decrypt)
+
+    // 数据解密
+    app.use(dataParser)
+  
   
     // 加载路由中间件
     app.use(router.routes()).use(router.allowedMethods())

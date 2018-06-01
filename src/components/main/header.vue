@@ -1,7 +1,7 @@
 <template>
 	<div class="header">
 		<div class='module-container'>
-			<div :class="item.nid==active?'module-btn active':'module-btn'" v-for='(item,index) in list' @click="$nodeCick(item.nid)">
+			<div :class="item.nid==active?'module-btn active':'module-btn'" v-for='(item,index) in list' @click="$nodeCick(item)">
 				<div :class="'module-icon iconfont '+item.icon"></div>
 				<div class="module-text">{{item.name}}</div>
 			</div>
@@ -14,7 +14,6 @@ export default {
     name: 'bwu-header',
     props: ['list','active'],
 	mounted() {
-		console.log(this.$store.state)
 	},
 	data() {
 		return {

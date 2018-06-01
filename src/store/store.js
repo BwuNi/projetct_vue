@@ -2,15 +2,13 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import PageTabs_Type from './modules/pageTab/mutation.type'
-import PageTabs from './modules/pageTab/pageTabs'
+import PageTabs from './modules/pageTab'
 
 import Loading_Type from './modules/loading/mutation.type'
-import Loading from './modules/loading/loading'
+import Loading from './modules/loading'
 
 import User_Type from './modules/user/mutation.type'
 import User from './modules/user/user'
-
-console.log(Loading_Type.mod)
 
 Vue.use(Vuex)
 

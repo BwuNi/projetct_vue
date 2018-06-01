@@ -1,6 +1,6 @@
 import {
     def_config, // 默认 ajax 配置
-    system ,// 系统
+    system, // 系统
     origin,
     env
 } from './config'
@@ -26,7 +26,7 @@ function Ajax(option = {}) {
             get: get.bind(res, op),
             post: post.bind(res, op),
         }
-        
+
     return res
 }
 

@@ -24,8 +24,9 @@ import Aside from './aside.vue'
 import Login from './login.vue'
 import PageContainer from './page.container.vue'
 
-import PageTabsType from '@/store/modules/pageTab/mutation.type'
-import SystemType from '@/store/modules/user/system/mutation.type'
+import pageTabs from '@/store/modules/pageTabs'
+import system from '@/store/modules/user/system' //SystemType
+
 
 export default {
 	name: 'bwu-home',
@@ -39,46 +40,11 @@ export default {
 	data() {
 		return {
 			showLogin: true,
-			showLoading: false && this.$store.state.isLoading,
-			listData: [{
-				label: 'Hello',
-				children: [{
-					label: 'Vue',
-					children: [{
-						label: 'Hello Vue',
-						url: '/hello'
-					}]
-				}]
-			}, {
-				label: 'Pages',
-				children: [{
-					label: 'Blank_page',
-					children: [{
-						label: 'Page_1',
-						url: '/page_1'
-					}]
-				}, {
-					label: 'Filled_page',
-					children: [{
-						label: 'Page_2',
-						url: '/page_2'
-					}]
-				}]
-			}, {
-				label: '一级 3',
-				children: [{
-					label: '二级 3-1',
-					children: [{
-						label: '三级 3-1-1'
-					}]
-				}, {
-					label: '二级 3-2',
-					children: [{
-						label: '三级 3-2-1'
-					}]
-				}]
-			}],
+			showLoading: false && this.$store.state.isLoading
 		}
+	},
+	mounted() {
+		window.xx = this.$store
 	},
 	computed: {
 		activeMenus() {
@@ -91,14 +57,15 @@ export default {
 			return this.$store.state.User.System.modules.map(val => ({
 				name: val.name,
 				nid: val.nid,
-				icon: val.icon
+				icon: val.icon,
+				sort: val.sort,
 			}))
 		},
 		activeNid() {
-			return  this.$store.state.User.System.active
+			return this.$store.state.User.System.active
 		},
 		openedPages() {
-			return this.$store.state[PageTabsType.mod].pages
+			return this.$store.state.pageTabs.pages
 		}
 	},
 	methods: {
@@ -121,15 +88,15 @@ function $toTop() {
 
 function $asideClick(data) {
 	if (data.src) {
-		this.$store.commit(PageTabsType.mutations.ADD_PAGE, {
+		this.$store.commit(pageTabs.mut.ADD_PAGE, {
 			title: data.title,
 			src: data.src
 		})
 	}
 }
 
-function $headerClick(nid) {
-	this.$store.commit(SystemType.mutations.CHANGE_MOD, nid)
+function $headerClick({nid,sort}) {
+	this.$store.dispatch(system.act.CHANGE_MOD, {nid,sort})
 }
 
 
@@ -138,31 +105,27 @@ function $unload() {
 }
 
 
-function changeMod() {
-
-}
-
 </script>
 
 <style>
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity 0.5s;
+  transition: opacity 0.5s;
 }
 
 .fade-enter,
 .fade-leave-to {
-    opacity: 0;
+  opacity: 0;
 }
 
 #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
 }
 
 #app[data-sideopen='true'] {
-    padding-left: 240px;
+  padding-left: 240px;
 }
 </style>
