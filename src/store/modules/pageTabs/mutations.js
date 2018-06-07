@@ -1,3 +1,7 @@
+import { pageMap } from '../../../router/RouterName'
+import loid from '../../../utils/common/loid'
+console.log(pageMap)
+
 export default {
     ['SET_PAGE'](state, name) {
         if (name) {
@@ -7,19 +11,23 @@ export default {
         }
     },
     ['ADD_PAGE'](state, { title, src, props, index }) {
-        const name = loid('page')
+        const
+            name = loid('page'),
+            _src = pageMap[src]?src:'root-home-hello'
+
+        console.log({ title, src, props, index })
 
         if (index) {
             state.pages.splice(index, 0, {
                 title,
-                src,
+                src:_src,
                 props,
                 name: name
             })
         } else {
             state.pages.push({
                 title,
-                src,
+                src:_src,
                 props,
                 name: name
             })

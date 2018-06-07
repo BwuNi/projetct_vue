@@ -19,7 +19,8 @@ export default {
                             nid: v.MID,
                             pid: v.PMID,
                             title: v.MNAME,
-                            sort: v.SORT
+                            sort: v.SORT,
+                            src:v.URL
                         })),
                         'nid',
                         'pid'

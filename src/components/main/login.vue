@@ -74,17 +74,17 @@ function init_check() {
 	})()
 
 
-	_this.img_src = `http://127.0.0.1:1102/WCKJAPI_MD/GetValidateCode/` + encodeURIComponent(`{"data":"${vcode_id}"}`)
+	//_this.img_src = `http://127.0.0.1:1102/WCKJAPI_MD/GetValidateCode/` + encodeURIComponent(`{"data":"${vcode_id}"}`)
 
-	// Ajax()
-	// .data(null)
-	// .get(`GetValidateCode/{"data":"${vcode_id}"}`)
-	// .then(({ data }) => {
-	// 	_this.img_src = data
-	// })
-	// .catch(() => {
-	// 	_this.img_src = `http://127.0.0.1:8081/WCKJAPI_MD/GetValidateCode/{"data":"${vcode_id}"}`
-	// })
+	Ajax()
+		.data(null)
+		.get(`GetValidateCode/{"data":"${vcode_id}"}`)
+		.then(({ data }) => {
+			_this.img_src = data
+		})
+		.catch(() => {
+			_this.img_src = `http://127.0.0.1:8081/WCKJAPI_MD/GetValidateCode/{"data":"${vcode_id}"}`
+		})
 }
 
 function before_check(_this) {
@@ -127,20 +127,14 @@ function succ(_this, id) {
 						nid: i.MID,
 						icon: i.ICON.split('-').join('s-'),
 						pages: [],
-						sort:i.SORT
+						sort: i.SORT
 					}))
 				}
 			)
 
-			console.log(data.map(i => ({
-				name: i.MNAME,
-				nid: i.MID,
-				icon: i.ICON.split('s-').join('-'),
-				pages: []
-			})))
+			_this.$emit('login')
 		})
 
-	_this.$emit('login')
 }
 
 function err() {

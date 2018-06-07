@@ -31,7 +31,7 @@ export default {
 	},
 	data() {
 		return {
-			tabs: this.$store.state.PageTabs,
+			tabs: this.$store.getters[pageTabs.get.STATE],
 			showPanel: true,
 			defaultProps: {
 				children: 'children',
@@ -43,14 +43,14 @@ export default {
 	computed: {
 		activePage: {
 			get: function () {
-				return this.$store.state.PageTabs.activePageName
+				return this.$store.getters[pageTabs.get.STATE].activePageName
 			},
 			set: function (value) {
 				this.$store.commit(pageTabs.mut.SET_PAGE, value)
 			}
 		},
 		openedPages: function () {
-			return this.$store.state.PageTabs.pages
+			return this.$store.getters[pageTabs.get.STATE].pages
 		}
 	},
 	mounted() {
@@ -80,6 +80,7 @@ export default {
 					}
 				});
 
+				console.log(pageTabs.mut)
 				this.$store.commit(pageTabs.mut.REMOVE_PAGE, closeIndex)
 				this.$store.commit(pageTabs.mut.SET_PAGE, activeName)
 			}

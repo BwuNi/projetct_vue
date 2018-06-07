@@ -25,6 +25,7 @@ import Login from './login.vue'
 import PageContainer from './page.container.vue'
 
 import pageTabs from '@/store/modules/pageTabs'
+import loading from '@/store/modules/loading'
 import system from '@/store/modules/user/system' //SystemType
 
 
@@ -40,7 +41,7 @@ export default {
 	data() {
 		return {
 			showLogin: true,
-			showLoading: false && this.$store.state.isLoading
+			showLoading: false && this.$store.getters[loading.get.STATE].isLoading
 		}
 	},
 	mounted() {
@@ -48,13 +49,13 @@ export default {
 	},
 	computed: {
 		activeMenus() {
-			for (let item of this.$store.state.User.System.modules) {
-				if (item.nid === this.$store.state.User.System.active) return item.pages
+			for (let item of this.$store.getters[system.get.STATE].modules) {
+				if (item.nid === this.$store.getters[system.get.STATE].active) return item.pages
 			}
 			return []
 		},
 		systems() {
-			return this.$store.state.User.System.modules.map(val => ({
+			return this.$store.getters[system.get.STATE].modules.map(val => ({
 				name: val.name,
 				nid: val.nid,
 				icon: val.icon,
@@ -62,10 +63,10 @@ export default {
 			}))
 		},
 		activeNid() {
-			return this.$store.state.User.System.active
+			return this.$store.getters[system.get.STATE].active
 		},
 		openedPages() {
-			return this.$store.state.pageTabs.pages
+			return this.$store.getters[pageTabs.get.STATE].pages
 		}
 	},
 	methods: {
@@ -79,6 +80,7 @@ export default {
 function $login() {
 	const _this = this
 	_this.$data.showLogin = false
+	this.$store.dispatch(system.act.CHANGE_MOD, this.$store.getters[system.get.STATE].modules[0])
 }
 
 function $toTop() {
